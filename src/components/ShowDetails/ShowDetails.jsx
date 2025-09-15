@@ -66,10 +66,10 @@ export default function ShowDetails() {
                                 e.stopPropagation();
                                 if (inList) {
                                     removeFromWatchList(showDetails.id);
-                                    toast(`${showDetails.name}  removed from WatchList`);
+                                    toast.error(`${showDetails.name}  removed from WatchList`);
                                 } else {
                                     addToWatchList(showDetails);
-                                    toast(`${showDetails.name}  added to WatchList`);
+                                    toast.success(`${showDetails.name}  added to WatchList`);
                                 }
                                 inList ? removeFromWatchList(showDetails.id) : addToWatchList(showDetails);
                             }}
