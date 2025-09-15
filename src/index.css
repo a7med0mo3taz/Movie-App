@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+
+
+
+body{
+    @apply bg-amber-50
+}
+.smooth {
+    @apply transition-all duration-500 ease-in-out
+}
+.btn {
+    @apply px-5 py-2 rounded-xl bg-[#FFE353] hover:bg-yellow-400 transition-all duration-500 ease-in-out;
+}
