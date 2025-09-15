@@ -40,7 +40,7 @@ export default function ShowDetails() {
                 </button>
             </div>
 
-            <div className="grid grid-cols-12 gap-8 mb-10">
+            <div className="grid grid-cols-12 gap-4 lg:gap-8 mb-10">
 
                 {/* Show Img */}
                 <div className="showImg col-span-12 lg:col-span-4">
@@ -54,7 +54,7 @@ export default function ShowDetails() {
                     {/* Show Title & Date*/}
                     <div className="flex items-start justify-between mb-5">
                         <div className="flex flex-col items-start">
-                            <h2 className='text-5xl font-semibold mb-5'> {showDetails.name} </h2>
+                            <h2 className='text-2xl lg:text-5xl font-semibold mb-5'> {showDetails.name} </h2>
                             <span className='text-xs text-[#858585] '>
                                 {showDetails.first_air_date}
                             </span>
@@ -66,14 +66,14 @@ export default function ShowDetails() {
                                 e.stopPropagation();
                                 if (inList) {
                                     removeFromWatchList(showDetails.id);
-                                    toast(`${showDetails.name}  removed from WatchList 💔`);
+                                    toast(`${showDetails.name}  removed from WatchList`);
                                 } else {
                                     addToWatchList(showDetails);
-                                    toast(`${showDetails.name}  added to WatchList ❤️`);
+                                    toast(`${showDetails.name}  added to WatchList`);
                                 }
                                 inList ? removeFromWatchList(showDetails.id) : addToWatchList(showDetails);
                             }}
-                            className={`text-4xl cursor-pointer transition ${inList ? "text-red-500" : "text-black hover:text-red-500"
+                            className={`text-4xl my-auto lg:my-0 cursor-pointer transition ${inList ? "text-red-500" : "text-black hover:text-red-500"
                                 }`}
                         />
                     </div>
@@ -116,7 +116,7 @@ export default function ShowDetails() {
                     </div>
 
                     {/* Show Overview */}
-                    <p className='text-2xl mb-5'> {showDetails.overview} </p>
+                    <p className='text-xl lg:text-2xl mb-5'> {showDetails.overview} </p>
 
                     {/* Show Genres */}
                     <div className="flex flex-wrap gap-3 mb-5">
@@ -131,18 +131,18 @@ export default function ShowDetails() {
                     </div>
 
                     {/* Seasons & Episodes & Languages */}
-                    <div className="flex items-center gap-10 mb-5">
-                        <p className='font-bold'> Seasons :  <span> {showDetails.number_of_seasons} </span>  </p>
-                        <p className='font-bold'> Episodes :  <span> {showDetails.number_of_episodes} </span> Episodes</p>
-                        <p className='font-bold'> Languages :  <span> {showDetails.spoken_languages.map(lang => lang.english_name).join(", ")} </span></p>
+                    <div className="flex items-center gap-0 md:gap-10 mb-5">
+                        <p className='font-bold text-center'> Seasons :  <span> {showDetails.number_of_seasons} </span>  </p>
+                        <p className='font-bold text-center'> Episodes :  <span> {showDetails.number_of_episodes} </span> Episodes</p>
+                        <p className='font-bold text-center'> Languages :  <span> {showDetails.spoken_languages.map(lang => lang.english_name).join(", ")} </span></p>
                     </div>
 
                     {/* Production Companies */}
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-8">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-6 my-8">
                         {showDetails.production_companies.map((company) => (
                             <div
                                 key={company.id}
-                                className="flex flex-col items-center bg-yellow-50 rounded-lg p-3 shadow"
+                                className="flex flex-col items-center bg-yellow-50 rounded-lg p-2 lg:p-3 shadow"
                             >
                                 {company.logo_path ? (
                                     <img

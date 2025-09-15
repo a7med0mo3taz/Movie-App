@@ -45,7 +45,7 @@ export default function MovieDetails() {
 
             </div>
 
-            <div className="grid grid-cols-12 gap-8 mb-10">
+            <div className="grid grid-cols-12 gap-4 lg:gap-8 mb-10">
 
                 {/* Movie Img */}
                 <div className="movieImg col-span-12 lg:col-span-4">
@@ -55,12 +55,12 @@ export default function MovieDetails() {
                         className='w-full rounded-xl object-cover ' />
                 </div>
 
-                <div className="col-span-12 lg:col-span-8 my-auto">
+                <div className="col-span-12 lg:col-span-8 my-auto ">
 
                     {/* Movie Title & Date */}
                     <div className="flex items-start justify-between mb-5">
                         <div className="flex flex-col items-start">
-                            <h2 className='text-5xl font-semibold mb-5'> {movieDetails.title} </h2>
+                            <h2 className='text-2xl lg:text-5xl font-semibold mb-5'> {movieDetails.title} </h2>
                             <span className='text-xs text-[#858585] '>
                                 {movieDetails.release_date}
                             </span>
@@ -72,14 +72,14 @@ export default function MovieDetails() {
                                 e.stopPropagation();
                                 if (inList) {
                                     removeFromWatchList(movieDetails.id);
-                                    toast.error(`${movieDetails.title} removed from Watchlist 💔`);
+                                    toast.error(`${movieDetails.title} removed from Watchlist `);
                                 } else {
                                     addToWatchList(movieDetails);
-                                    toast.success(`${movieDetails.title} added to Watchlist ❤️`);
+                                    toast.success(`${movieDetails.title} added to Watchlist `);
                                 }
                                 inList ? removeFromWatchList(movieDetails.id) : addToWatchList(movieDetails);
                             }}
-                            className={`text-4xl cursor-pointer transition ${inList ? "text-red-500" : "text-black hover:text-red-500"
+                            className={`text-4xl my-auto lg:my-0  cursor-pointer transition ${inList ? "text-red-500" : "text-black hover:text-red-500"
                                 }`}
                         />
                     </div>
@@ -123,7 +123,7 @@ export default function MovieDetails() {
 
 
                     {/* Movie Overview */}
-                    <p className='text-2xl mb-5'> {movieDetails.overview} </p>
+                    <p className='text-xl lg:text-2xl mb-5'> {movieDetails.overview} </p>
 
                     {/* Movie Genres */}
                     <div className="flex flex-wrap gap-3 mb-5">
@@ -138,23 +138,23 @@ export default function MovieDetails() {
                     </div>
 
                     {/* Duration & Languages */}
-                    <div className="flex items-center gap-10 mb-5">
-                        <p className='font-bold'> Duration :  <span> {movieDetails.runtime} </span> Min </p>
-                        <p className='font-bold'> Languages :  <span> {movieDetails.spoken_languages.map(lang => lang.english_name).join(", ")} </span></p>
+                    <div className="flex items-center gap-3 md:gap-10 mb-5">
+                        <p className='font-bold text-sm md:text-[16px] '> Duration :  <span> {movieDetails.runtime} </span> Min </p>
+                        <p className='font-bold text-sm md:text-[16px]'> Languages :  <span> {movieDetails.spoken_languages.map(lang => lang.english_name).join(", ")} </span></p>
                     </div>
 
                     {/* Production Companies */}
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-8">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-6 my-8">
                         {movieDetails.production_companies.map((company) => (
                             <div
                                 key={company.id}
-                                className="flex flex-col items-center bg-yellow-50 rounded-lg p-3 shadow"
+                                className="flex flex-col items-center bg-yellow-50 rounded-lg p-2 lg:p-3 shadow"
                             >
                                 {company.logo_path ? (
                                     <img
                                         src={`https://image.tmdb.org/t/p/w200${company.logo_path}`}
                                         alt={company.name}
-                                        className="h-16 object-contain mb-2"
+                                        className="h-6  lg:h-16 object-contain mb-2"
                                     />
                                 ) : (
                                     <div className="h-16 w-full flex items-center justify-center text-gray-400 text-sm">
@@ -176,7 +176,7 @@ export default function MovieDetails() {
             </div>
 
             <div className="border-t">
-                <h1 className='text-5xl font-semibold my-10'>Recommendations</h1>
+                <h1 className='text-3xl lg:text-5xl font-semibold my-10'>Recommendations</h1>
                 <Recommendations />
             </div>
         </div>

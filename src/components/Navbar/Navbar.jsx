@@ -39,13 +39,13 @@ export default function Navbar() {
         <div>
             <nav className={`bg-[#FFE353] border-gray-200 
                 ${isScrolled ? "fixed top-0 left-0 right-0 z-50  border-b border-white  " : "relative  "} `}>
-                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4 px-3">
                     <Link to={""} onClick={() => scrollToTop()} className="flex items-center space-x-3 rtl:space-x-reverse">
                         <span className="self-center lg:text-2xl font-semibold whitespace-nowrap ">Movie App</span>
                     </Link>
-                    <div className="links flex items-center justify-center gap-0.5 lg:hidden" >
-                        <button type="button" data-dropdown-toggle="language-dropdown-menu" className="inline-flex items-center font-medium justify-center px-1 py-2 text-sm text-gray-900  rounded-lg cursor-pointer hover:bg-gray-100 smooth">
-                            <svg className="w-5 h-5 rounded-full me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 3900 3900"><path fill="#b22234" d="M0 0h7410v3900H0z" /><path d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0" stroke="#fff" strokeWidth={300} /><path fill="#3c3b6e" d="M0 0h2964v2100H0z" /><g fill="#fff"><g id="d"><g id="c"><g id="e"><g id="b"><path id="a" d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z" /><use xlinkHref="#a" y={420} /><use xlinkHref="#a" y={840} /><use xlinkHref="#a" y={1260} /></g><use xlinkHref="#a" y={1680} /></g><use xlinkHref="#b" x={247} y={210} /></g><use xlinkHref="#c" x={494} /></g><use xlinkHref="#d" x={988} /><use xlinkHref="#c" x={1976} /><use xlinkHref="#e" x={2470} /></g></svg>
+                    <div className="links flex items-center justify-center gap-1.5 lg:hidden" >
+                        <button type="button" data-dropdown-toggle="language-dropdown-menu" className="inline-flex items-center font-medium justify-center  py-2 text-sm text-gray-900  rounded-lg cursor-pointer hover:bg-gray-100 smooth">
+                            <svg className="w-5 h-5 rounded-full me-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 3900 3900"><path fill="#b22234" d="M0 0h7410v3900H0z" /><path d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0" stroke="#fff" strokeWidth={300} /><path fill="#3c3b6e" d="M0 0h2964v2100H0z" /><g fill="#fff"><g id="d"><g id="c"><g id="e"><g id="b"><path id="a" d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z" /><use xlinkHref="#a" y={420} /><use xlinkHref="#a" y={840} /><use xlinkHref="#a" y={1260} /></g><use xlinkHref="#a" y={1680} /></g><use xlinkHref="#b" x={247} y={210} /></g><use xlinkHref="#c" x={494} /></g><use xlinkHref="#d" x={988} /><use xlinkHref="#c" x={1976} /><use xlinkHref="#e" x={2470} /></g></svg>
                             English (US)
                         </button>
 
@@ -68,7 +68,7 @@ export default function Navbar() {
                                 <p>WatchList</p>
                                 {watchList.length > 0 && (
                                     <span
-                                        className="absolute -top-2 -right-4 bg-red-500 text-white text-xs font-bold
+                                        className="absolute -top-2.5 -right-2 bg-red-500 text-white text-xs font-bold
                                         rounded-full w-5 h-5 flex items-center justify-center"
                                     >
                                         {watchList.length}
@@ -77,7 +77,7 @@ export default function Navbar() {
                             </Link>
                         </div>
                         {/* Open main menu */}
-                        <button type="button" onClick={() => setOpenNav(prev => !prev)} className="inline-flex cursor-pointer items-center px-1   justify-center 
+                        <button type="button" onClick={() => setOpenNav(prev => !prev)} className="inline-flex cursor-pointer items-center    justify-center 
                         ">
                             <span className="sr-only">Open main menu</span>
                             <FontAwesomeIcon icon={faBars} className='text-2xl sm:text-3xl smooth' />
