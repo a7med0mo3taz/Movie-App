@@ -35,7 +35,7 @@ export default function WatchList() {
                 </div>
             ) : (
                 <div className="container mx-auto py-20 ">
-                    <div className="grid grid-cols-12 p-3 gap-10">
+                    <div className="grid grid-cols-12 p-5 gap-4 lg:gap-10">
                         {watchList.map((movie) => {
                             const inList = isInWatchList(movie.id);
                             const rating = movie.vote_average ? (movie.vote_average / 10) * 5 : 0;
@@ -43,11 +43,11 @@ export default function WatchList() {
                                 <Link to={"/movieDetails/" + movie.id}
                                 onClick={()=> scrollToTop()}
                                     key={movie.id}
-                                    className="grid grid-cols-12  mx-auto my-auto col-span-11  md:col-span-12 lg:col-span-6 bg-white rounded-xl shadow-md p-5 gap-5 items-start"
+                                    className="grid grid-cols-12  mx-auto my-auto col-span-12  md:col-span-12 lg:col-span-6 bg-white rounded-xl shadow-md p-5 gap-5 items-start"
                                 >
                                     
 
-                                    <div className="img col-span-12 md:col-span-3 lg:col-span-3  w-full   overflow-hidden rounded-lg">
+                                    <div className="img col-span-12  lg:col-span-3  w-full   overflow-hidden rounded-lg">
                                         <img
                                             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                                             alt={movie.title}
@@ -55,7 +55,7 @@ export default function WatchList() {
                                         />
                                     </div>
 
-                                    <div className="flex flex-col flex-grow col-span-12 md:col-span-9 lg:col-span-9 my-auto">
+                                    <div className="flex flex-col flex-grow col-span-12 lg:col-span-9  my-auto">
                                         <div className="flex items-start justify-between mb-5">
                                             <div className="flex flex-col items-start">
                                                 <h2 className="text-2xl font-semibold mb-2"> {movie.title} </h2>
